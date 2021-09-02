@@ -1,25 +1,12 @@
-import logo from './logo.svg';
-import './App.css';
-
+import fruits from "./foods";
+import { choice, remove } from "./helpers";
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  let randFruit = choice(fruits);
+  console.log(`I would like one ${randFruit}, please`);
+  console.log(`Here you go: ${randFruit}`);
+  console.log(`Delicious may I have another?`);
+  remove(fruits, randFruit);
+  console.log(`I am sorry we are all out we have ${fruits.length} left`);
 }
 
 export default App;
